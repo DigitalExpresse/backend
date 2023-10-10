@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvelle réservation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&family=Silkscreen&display=swap');
+
+        :root {
+            --primary-color: #5271FF;
+            --hover-primary-color: #1e90ff;
+            --secondary-color: #e03b3b;
+            --hover-secondary-color: #c53030;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 200px;
+        }
+
+        .logo-div {
+            border-bottom: 2px solid #eeeded;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .list-info-reservation {
+            margin-top: 30px;
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            width: 70px;
+            margin-right: 10px;
+        }
+
+        .btn-confirm {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .btn-confirm:hover {
+            background-color: var(--hover-primary-color);
+        }
+
+        .btn-refuse {
+            background-color: var(--secondary-color);
+            color: #ffffff;
+        }
+
+        .btn-refuse:hover {
+            background-color: var(--hover-secondary-color);
+        }
+
+        .email-link {
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+        }
+
+        .mobileNumber-link {
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+        }
+
+        .footer {
+            font-size: 11px;
+        }
+
+        .mb-0 {
+            margin-bottom: 0;
+        }
+
+        .m0 {
+            margin: 0;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+<!--    Todo: voir pourquoi le logo ne s'affiche pas dans le mail-->
+<!--    <div class="logo-div">-->
+<!--        <img class="logo" src="/images/logo.png" alt="Logo">-->
+<!--    </div>-->
+
+    <p>Bonjour,</p>
+    <p>Une <b style="color: var(--primary-color);">nouvelle réservation</b> a été reçue et est en attente de confirmation :</p>
+    <ul class="list-info-reservation">
+        <li><strong>Date :</strong> {{reservationDate}}</li>
+        <li><strong>Heure :</strong> {{reservationHour}}</li>
+        <li><strong>Nombre de personnes :</strong> {{numberOfPeople}}</li>
+        <li><strong>Nom du client :</strong> {{clientFullName}}</li>
+    </ul>
+<!--    <div class="button-container">-->
+<!--        <a class="btn btn-confirm" href="http://localhost:3000/api/reservation/confirm_reservation?statut=true">Confirmer</a>-->
+<!--        <a class="btn btn-refuse" href="http://localhost:3000/api/reservation/confirm_reservation?statut=false">Refuser</a>-->
+<!--    </div>-->
+
+    <div class="footer">
+        <p class="mb-0 mt-20">
+            Assistance technique :
+            <br>
+            <a class="email-link" href="mailto:{{restaurantEmail}}">📧 {{restaurantEmail}}</a>
+             <br>
+            <a class="mobileNumber-link" href="tel:{{restaurantPhone}}">📞 {{restaurantPhone}}</a>
+        </p>
+        <br>
+        <p class="m0">Cet e-mail a été envoyé automatiquement. Merci de ne pas y répondre.</p>
+    </div>
+
+</div>
+</body>
+</html>

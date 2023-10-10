@@ -1,0 +1,246 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id               Int                   @id @default(autoincrement())
+  firstname        String?               @db.VarChar(255)
+  lastname         String?               @db.VarChar(255)
+  email            String                @unique
+  mobileNumber     Int?                  @db.Int
+  password         String
+  notifiable_token String?
+  notifications    Notifications_admin[]
+}
+
+// ------------ RESERVATION ------------
+
+// mobileNumber is not nullable 
+model Client {
+  id                 Int                    @id @default(autoincrement())
+  firstname          String                 @db.VarChar(255)
+  lastname           String                 @db.VarChar(255)
+  email              String?                @unique
+  mobileNumber       String?                @db.VarChar(255)
+  count_reservations Int?                   @default(0)
+  count_no_shows     Int?                   @default(0)
+  Reservation        Reservation[]
+  notifiable_token   String?
+  notifications      Notifications_client[]
+}
+
+model Table {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique @db.VarChar(255)
+  capacity Int        @db.Int
+  Reserved Reserved[]
+}
+
+enum Status {
+  Pending
+  Confirmed
+}
+
+model Reservation {
+  id              Int        @id @default(autoincrement())
+  date            DateTime   @db.DateTime
+  Client          Client     @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  clientId        Int
+  comment         String?    @db.VarChar(255)
+  status          Status     @default(Pending)
+  numberOfPersons Int        @default(1) @db.Int
+  Reserved        Reserved[]
+}
+
+model Reserved {
+  id            Int         @id @default(autoincrement())
+  Table         Table       @relation(fields: [tableId], references: [id], onDelete: Cascade)
+  tableId       Int
+  Reservation   Reservation @relation(fields: [reservationId], references: [id], onDelete: Cascade)
+  reservationId Int
+}
+
+model About {
+  id           Int    @id @default(autoincrement())
+  name         String @db.VarChar(255)
+  address      String @db.VarChar(255)
+  postal_code  String @db.VarChar(255)
+  city         String @db.VarChar(255)
+  mobileNumber String @db.VarChar(255)
+}
+
+model Period {
+  id             Int             @id @default(autoincrement())
+  start_at       DateTime        @db.Time
+  end_at         DateTime        @db.Time
+  dayOfWeek      Days
+  OpeningHours   OpeningHour[]
+  Service_Period ServicePeriod[]
+
+  @@unique([dayOfWeek, end_at, start_at])
+}
+
+enum Days {
+  Monday
+  Tuesday
+  Wednesday
+  Thursday
+  Friday
+  Saturday
+  Sunday
+}
+
+model OpeningHour {
+  id       Int          @id @default(autoincrement())
+  Period   Period       @relation(fields: [periodId], references: [id], onDelete: Cascade)
+  periodId Int
+  Group    OpeningHours @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  groupId  Int
+}
+
+model OpeningHours {
+  id           Int           @id @default(autoincrement())
+  name         String        @unique @db.VarChar(255)
+  OpeningHours OpeningHour[]
+}
+
+model Service {
+  id             Int             @id @default(autoincrement())
+  name           String          @unique @db.VarChar(255)
+  Service_Period ServicePeriod[]
+}
+
+model ServicePeriod {
+  id        Int     @id @default(autoincrement())
+  Service   Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  serviceId Int
+  Period    Period  @relation(fields: [periodId], references: [id], onDelete: Cascade)
+  periodId  Int
+}
+
+model Holiday {
+  id        Int      @id @default(autoincrement())
+  name      String   @default("Férié") @db.VarChar(255)
+  startDate DateTime @db.DateTime
+  endDate   DateTime @db.DateTime
+}
+
+// ------------ MENU ET CARTE ------------
+
+model Menu {
+  id          Int           @id @default(autoincrement())
+  name        String        @unique
+  description String?
+  price       Int
+  products    MenuProduct[]
+}
+
+model Card {
+  id           Int           @id @default(autoincrement())
+  name         String        @unique
+  description  String?
+  cardProducts CardProduct[]
+}
+
+model Category {
+  id           Int           @id @default(autoincrement())
+  name         String
+  parentId     Int?
+  parent       Category?     @relation("ChildCategories", fields: [parentId], references: [id], onDelete: Cascade)
+  children     Category[]    @relation("ChildCategories")
+  productMenus MenuProduct[]
+  cardProducts CardProduct[]
+}
+
+model Product {
+  id                 Int                 @id @default(autoincrement())
+  name               String
+  description        String?
+  price              Float
+  menus              MenuProduct[]
+  cardProducts       CardProduct[]
+  optionProducts     OptionProduct[]
+  supplementProducts SupplementProduct[]
+}
+
+model MenuProduct {
+  id         Int      @id @default(autoincrement())
+  menuId     Int
+  categoryId Int
+  premium    Float?
+  productId  Int
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id])
+  menu       Menu     @relation(fields: [menuId], references: [id], onDelete: Cascade)
+}
+
+model CardProduct {
+  id         Int       @id @default(autoincrement())
+  cardId     Int
+  categoryId Int?
+  productId  Int
+  product    Product   @relation(fields: [productId], references: [id], onDelete: Cascade)
+  category   Category? @relation(fields: [categoryId], references: [id])
+  card       Card      @relation(fields: [cardId], references: [id], onDelete: Cascade)
+}
+
+model OptionProduct {
+  id        Int     @id @default(autoincrement())
+  productId Int
+  optionId  Int
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  option    Option  @relation(fields: [optionId], references: [id], onDelete: Cascade)
+}
+
+model Option {
+  id             Int             @id @default(autoincrement())
+  name           String
+  choiceTypeId   Int
+  choiceType     ChoiceType      @relation(fields: [choiceTypeId], references: [id], onDelete: Cascade)
+  optionProducts OptionProduct[]
+}
+
+model ChoiceType {
+  id      Int      @id @default(autoincrement())
+  name    String
+  options Option[]
+}
+
+model SupplementProduct {
+  id           Int        @id @default(autoincrement())
+  productId    Int
+  supplementId Int
+  product      Product    @relation(fields: [productId], references: [id], onDelete: Cascade)
+  supplement   Supplement @relation(fields: [supplementId], references: [id], onDelete: Cascade)
+}
+
+model Supplement {
+  id                 Int                 @id @default(autoincrement())
+  name               String
+  price              Float
+  supplementProducts SupplementProduct[]
+}
+
+model Notifications_admin {
+  id      Int    @id @default(autoincrement())
+  type    String
+  data    Json?
+  admin   Admin  @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  adminId Int    @db.Int
+}
+
+model Notifications_client {
+  id       Int    @id @default(autoincrement())
+  type     String
+  data     Json?
+  client   Client @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  clientId Int    @db.Int
+}

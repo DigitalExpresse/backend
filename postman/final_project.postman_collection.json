@@ -1,0 +1,637 @@
+{
+	"info": {
+		"_postman_id": "8884adae-db70-4be8-ab1c-dbdabd0d284b",
+		"name": "final_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26312429",
+		"_collection_link": "https://epitech-workspace-89789.postman.co/workspace/My-workspace~a8b65619-f7ed-4662-8b9d-ee984f42fba5/collection/26312429-8884adae-db70-4be8-ab1c-dbdabd0d284b?action=share&creator=26312429&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/admin",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/admin/10",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"admin",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"1\",\n    \"email\": \"mariusf13@gmail.com\",\n    \"password\": \"Password12\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/admin/register",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"laruze\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/admin/2",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"admin",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error (no data)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:3000/api/admin/update/96",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"admin",
+										"update",
+										"96"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "CSRF-TOKEN",
+									"value": "randomly_generated_token"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-WX/meykr5gSDl7Il9p3R8Bkr6xI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Jun 2023 18:07:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid request AdminUpdateService: no data to update\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/admin/2",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"admin",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh_token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/admin/refresh-token",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"admin",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "connection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mariusf13@gmail.com\",\n    \"password\": \"Password12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/admin/connection",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"admin",
+								"connection"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disconnect",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/admin/disconnect",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"admin",
+								"disconnect"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Ici nous retrouverons toute les route qui concerne un administrateur (ADMIN en base de donnée).\n\nOn peut également inscrire un admin ([register](https://epitech-workspace-89789.postman.co/workspace/My-workspace~a8b65619-f7ed-4662-8b9d-ee984f42fba5/request/26312429-bf5a8177-5f5b-4481-adc0-bcc34ee3c740?ctx=documentation))\n\nConnecter un admin ([connection](https://epitech-workspace-89789.postman.co/workspace/My-workspace~a8b65619-f7ed-4662-8b9d-ee984f42fba5/request/26312429-64743766-5a77-4e64-a640-13981812f555?ctx=documentation))\n\nRefresh l'access token (refresh_token)\n\nMettre à jour les information d'un admin ([update](https://epitech-workspace-89789.postman.co/workspace/My-workspace~a8b65619-f7ed-4662-8b9d-ee984f42fba5/request/26312429-ef43ad0a-9903-46eb-8032-12ceb4d1b94b?ctx=documentation))\n\nOn pourra récuperer un, ou tous les admins. (getOne, getAll)\n\nDéconnecter l\"admin (disconnect)\n\nSupprimer un admin (delete)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "table",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/table",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"table"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/table/23",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"table",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"capacity\": 12,\n    \"name\": \"122\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/table",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"table"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"capacity\": 1,\n    \"name\": \"112\"\n \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/table/23",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"table",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/table/23`",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"table",
+								"23`"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "about",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n\"name\": \"kikou\",\n\"postal_code\": \"ffkfkkfffffffffdfffk@gmail.com\",\n\"city\": \"Password12\",\n\"address\": \"1\",\n\"mobileNumber\": \"ffkfkkfffffffffdfffk@gmail.com\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/about/create",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"about",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"kikou\",\n\"postal_code\": \"ffkfkkfffffffffdfffk@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/about/2",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"about",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/about",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"about"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reservation",
+			"item": [
+				{
+					"name": "getAvaibleSlot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"day\": \"kdzkzd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/reservation/get_available_slot",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"reservation",
+								"get_available_slot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "toReserve",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clientEmail\": \"marius13127@gmail.com\",\n    \"clientFullName\": \"Client\",\n    \"reservationDate\": \"2023-04-05\",\n    \"reservationHour\": \"12:31\",\n    \"numberOfPeople\": \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/reservation/to_reserve",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"reservation",
+								"to_reserve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirmReservation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/reservation/confirm_reservation/?statut=true",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"reservation",
+								"confirm_reservation",
+								""
+							],
+							"query": [
+								{
+									"key": "statut",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "client",
+			"item": []
+		},
+		{
+			"name": "horaire",
+			"item": []
+		},
+		{
+			"name": "carte et menu",
+			"item": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url_api",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		}
+	]
+}

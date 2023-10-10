@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Confirmation de réservation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+
+        :root {
+            --primary-color: #5271FF;
+            --hover-primary-color: #1e90ff;
+        }
+
+        h3 {
+            margin: 0;
+            padding: 5px 0;
+            font-size: 18px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            border-radius: 10px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto 0 auto;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: rgba(23, 22, 22, 0.84);
+            padding: 20px 30px 10px 30px;
+
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px 10px 0 0;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 2px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .card-subject {
+            font-weight: bold;
+        }
+
+        .card-title {
+            margin-bottom:20px;
+            margin-top: 10px;
+        }
+
+        .card-content {
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 0 30px 15px;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+        a{
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover, a:focus, a:active {
+            color: black;
+            font-weight: bold;
+        }
+
+        .m0 {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card-title">Bonjour <b style="color: var(--primary-color)">{{clientFullName}}</b>,</div>
+    <div class="card-content">Votre réservation pour le <b style="color: var(--primary-color)">{{reservationDate}}</b> à <b style="color: var(--primary-color)">{{reservationHour}}</b> pour <b style="color: var(--primary-color)">{{numberOfPeople}} personnes</b> a été reçue et est en attente de confirmation.</div>
+    <div class="card-content">Merci de votre confiance et à bientôt 🙃</div>
+    <div class="card-content">Pour plus d'informations, n'hésitez pas à nous contacter.</div>
+    <div class="card-content">📧 <a href="mailto:{{restaurantEmail}}">{{restaurantEmail}}</a></div>
+    <div class="card-content">📞 <a href="tel:{{restaurantPhone}}">{{restaurantPhone}}</a></div>
+    <div class="card-content">🌐 <a href={{restaurantWebsite}}>{{restaurantWebsite}}</a></div>
+
+</div>
+
+<div class="footer">
+    <p class="m0">Cet e-mail a été envoyé automatiquement. Merci de ne pas y répondre.</p>
+</div>
+
+</body>
+</html>
+

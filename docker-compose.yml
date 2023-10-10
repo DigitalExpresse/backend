@@ -1,0 +1,77 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    expose:
+      - "3306"
+    networks:
+      - backend
+    environment:
+      MYSQL_ROOT_PASSWORD: "user"
+      MYSQL_DATABASE: "restaurant"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "user"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "db", "-u", "root", "-puser"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - db:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    networks:
+      - backend
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=user
+
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    networks:
+      - backend
+    ports:
+      - "6379:6379"
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - db:/data
+
+  api:
+    build: .
+    command: sh -c "sleep 10 && until nc -z db 3306; do sleep 1; done && npm run deploy && npx prisma migrate dev --create-only --name migration_$$(date +\%Y\%m\%d\%H\%M\%S) --schema src/express-web-api/prisma/schema.prisma"
+    container_name: api
+    restart: always
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - backend
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: "db"
+      DB_PORT: "3306"
+      DB_USER: "root"
+      DB_PASSWORD: "user"
+      DB_DATABASE: "restaurant"
+      DATABASE_URL: "mysql://root:user@db:3306/restaurant"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db:
+
+networks:
+  backend:
+    driver: bridge
