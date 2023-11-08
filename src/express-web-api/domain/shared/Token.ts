@@ -13,8 +13,8 @@ export class Token {
 
     static async generateAccessAndRefreshToken(payload: any, accessSecret: string, refreshSecret: string): Promise<{ accessToken: string, refreshToken: string }> {
 
-        const accessTokenOptions = { expiresIn: '1400m' };
-        const refreshTokenOptions = { expiresIn: '600m' };
+        const accessTokenOptions = { expiresIn: '30m' };
+        const refreshTokenOptions = { expiresIn: '6000m' };
 
         const accessToken = await this.generateToken(payload, accessSecret, accessTokenOptions);
         const refreshToken = await this.generateToken(payload, refreshSecret, refreshTokenOptions);
@@ -36,8 +36,8 @@ export class Token {
             const decodedRefreshToken = await this.verifyToken(refreshToken, refreshSecret);
             const { id, email } = decodedRefreshToken;
             const payload = { id, email };
-            const accessTokenOptions = { expiresIn: '60m' };
-            const refreshTokenOptions = { expiresIn: '600m' };
+            const accessTokenOptions = { expiresIn: '30m' };
+            const refreshTokenOptions = { expiresIn: '6000m' };
 
             const newAccessToken = await this.generateToken(payload, accessSecret, accessTokenOptions);
             const newRefreshToken = await this.generateToken(payload, refreshSecret, refreshTokenOptions);
