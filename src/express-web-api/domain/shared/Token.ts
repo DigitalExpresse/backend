@@ -27,7 +27,7 @@ export class Token {
             return await jwt.verify(token, secret);
         } catch (e) {
             console.log(e);
-            throw new Error(`Failed to verify token: ${e}`);
+            throw new Error(e);
         }
     }
 
