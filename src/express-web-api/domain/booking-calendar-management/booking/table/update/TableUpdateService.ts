@@ -1,4 +1,4 @@
-import {ERROR_ALREADY_EXIST, ERROR_INVALID_REQUEST, ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_ALREADY_EXIST, ERROR_INVALID_REQUEST, ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 import {TableRepository} from "@root/domain/booking-calendar-management/booking/table/TableRepository";
 import {
     TableUpdateControllerRequestBody

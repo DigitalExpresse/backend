@@ -1,4 +1,4 @@
-import {ERROR_INVALID_REQUEST} from "@utils/messages/error_message";
+import {ERROR_INVALID_REQUEST} from "@utils/messages/errorMessage";
 import {About} from "@root/domain/about/About";
 import {AboutCreateRequestData} from "@root/domain/about/create/AboutCreateController";
 

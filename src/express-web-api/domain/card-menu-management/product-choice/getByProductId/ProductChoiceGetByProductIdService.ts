@@ -1,5 +1,5 @@
 import { ProductChoiceRepository } from "@root/domain/card-menu-management/product-choice/ProductChoiceRepository";
-import {ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 
 interface Option {
     optionId: number;

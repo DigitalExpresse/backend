@@ -1,5 +1,5 @@
 import { MenuProductDeleteService } from "@root/domain/card-menu-management/menu-product/delete/MenuProductDeleteService";
-import { ERROR_NOT_FOUND } from "@utils/messages/error_message";
+import { ERROR_NOT_FOUND } from "@utils/messages/errorMessage";
 
 export class MenuProductDeleteController {
     private readonly _menuProductId: number;

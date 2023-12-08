@@ -1,6 +1,6 @@
 import { prisma } from "@root/ExpressApp";
 import { Admin } from "@prisma/client";
-import { ERROR_NOT_FOUND } from "@utils/messages/error_message";
+import { ERROR_NOT_FOUND } from "@utils/messages/errorMessage";
 
 export class AdminRepository {
   static async findAll(): Promise<Omit<Admin, "password">[]> {

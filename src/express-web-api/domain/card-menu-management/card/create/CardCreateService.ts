@@ -1,4 +1,4 @@
-import {ERROR_ALREADY_EXIST, ERROR_INVALID_REQUEST} from "@utils/messages/error_message";
+import {ERROR_ALREADY_EXIST, ERROR_INVALID_REQUEST} from "@utils/messages/errorMessage";
 import {Card} from "@root/domain/card-menu-management/card/Card";
 import {CardRepository} from "@root/domain/card-menu-management/card/CardRepository";
 

@@ -1,5 +1,5 @@
 import { MenuProductRepository } from "@root/domain/card-menu-management/menu-product/MenuProductRepository";
-import { ERROR_INVALID_REQUEST, ERROR_NOT_FOUND } from "@utils/messages/error_message";
+import { ERROR_INVALID_REQUEST, ERROR_NOT_FOUND } from "@utils/messages/errorMessage";
 import {
     MenuProductUpdateRequestDto
 } from "@root/domain/card-menu-management/menu-product/update/MenuProductUpdateController";

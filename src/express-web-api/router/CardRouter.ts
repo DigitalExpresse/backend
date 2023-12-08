@@ -1,6 +1,6 @@
 import * as express from 'express';
 import {MiddlewareAuthentication} from "@root/middlewares/MiddlewareAuthentication";
-import {SUCCESS} from "@utils/messages/success_message";
+import {SUCCESS} from "@utils/messages/successMessage";
 import {handleErrors} from "@utils/service/handleErrors";
 
 import {CardGetAllController} from "@root/domain/card-menu-management/card/getAll/CardGetAllController";

@@ -7,7 +7,7 @@ import {
     SUCCESS_RESOURCE_CREATED,
     SUCCESS_RESOURCE_DELETED,
     SUCCESS_RESOURCE_UPDATED
-} from "@utils/messages/success_message";
+} from "@utils/messages/successMessage";
 import {CategoryUpdateController} from "@root/domain/card-menu-management/category/update/CategoryUpdateController";
 import {CategoryDeleteController} from "@root/domain/card-menu-management/category/delete/CategoryDeleteController";
 import {

@@ -1,5 +1,5 @@
 import {AdminRepository} from "@root/domain/admin/AdminRepository";
-import {ERROR_INVALID_EMAIL, ERROR_INVALID_REQUEST} from "@utils/messages/error_message";
+import {ERROR_INVALID_EMAIL, ERROR_INVALID_REQUEST} from "@utils/messages/errorMessage";
 import {Email} from "@root/domain/shared";
 
 export class AdminUpdateService {

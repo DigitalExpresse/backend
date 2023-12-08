@@ -4,7 +4,7 @@ import {
     ERROR_INVALID_EMAIL,
     ERROR_INVALID_PASSWORD,
     ERROR_INVALID_REQUEST, ERROR_NOT_FOUND
-} from "@utils/messages/error_message";
+} from "@utils/messages/errorMessage";
 
 const errorMappings: Record<number, string[]> = {
     400: [

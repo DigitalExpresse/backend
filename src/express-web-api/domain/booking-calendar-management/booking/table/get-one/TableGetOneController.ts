@@ -1,5 +1,5 @@
 import {TableGetOneService} from "@root/domain/booking-calendar-management/booking/table/get-one/TableGetOneService";
-import {ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 
 export class TableGetOneController {
     _requestId: string;

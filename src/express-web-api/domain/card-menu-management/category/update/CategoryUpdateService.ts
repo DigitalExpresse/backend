@@ -1,5 +1,5 @@
 import { CategoryRepository } from "@root/domain/card-menu-management/category/CategoryRepository";
-import { ERROR_INVALID_REQUEST, ERROR_NOT_FOUND } from "@utils/messages/error_message";
+import { ERROR_INVALID_REQUEST, ERROR_NOT_FOUND } from "@utils/messages/errorMessage";
 
 export class CategoryUpdateService {
 

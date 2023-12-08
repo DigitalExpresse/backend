@@ -1,5 +1,5 @@
 import { CardProductGetAllService } from "@root/domain/card-menu-management/card-product/getAll/CardProductGetAllService";
-import { ERROR_NOT_FOUND } from "@utils/messages/error_message";
+import { ERROR_NOT_FOUND } from "@utils/messages/errorMessage";
 
 export class CardProductGetAllController {
     async execute() {

@@ -1,7 +1,7 @@
 import {
     ProductSupplementRepository
 } from "@root/domain/card-menu-management/product-supplement/ProductSupplementRepository";
-import {ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 
 export class ProductSupplementDeleteService {
 

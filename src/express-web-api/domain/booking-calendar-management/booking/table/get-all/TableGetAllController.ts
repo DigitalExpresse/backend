@@ -1,5 +1,5 @@
 import {TableGetAllService} from "@root/domain/booking-calendar-management/booking/table/get-all/TableGetAllService";
-import {ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 
 export class TableGetAllController {
 

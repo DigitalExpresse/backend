@@ -1,6 +1,6 @@
 import {CardGetOneByIdService} from "@root/domain/card-menu-management/card/getOneById/CardGetOneByIdService";
 import {CardRepository} from "@root/domain/card-menu-management/card/CardRepository";
-import {ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 
 export class CardGetOneByIdController {
 

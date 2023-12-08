@@ -1,5 +1,5 @@
 import {AdminRepository} from "@root/domain/admin/AdminRepository";
-import {ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 
 export class AdminDeleteAccountController {
 

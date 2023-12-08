@@ -1,5 +1,5 @@
 import {TableRepository} from "@root/domain/booking-calendar-management/booking/table/TableRepository";
-import {ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 
 export class TableDeleteController {
 

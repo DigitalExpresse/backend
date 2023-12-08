@@ -1,4 +1,4 @@
-import {ERROR_INVALID_REQUEST} from "@utils/messages/error_message";
+import {ERROR_INVALID_REQUEST} from "@utils/messages/errorMessage";
 
 export const verifyIdFormat = (id) => {
     if (isNaN(Number(id))) {

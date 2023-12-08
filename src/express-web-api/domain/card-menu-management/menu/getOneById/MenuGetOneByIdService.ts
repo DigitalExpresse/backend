@@ -1,5 +1,5 @@
 import {MenuRepository} from "@root/domain/card-menu-management/menu/MenuRepository";
-import {ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 
 export class MenuGetOneByIdService {
 

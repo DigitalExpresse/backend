@@ -1,5 +1,5 @@
 import {ProductChoiceRepository} from "@root/domain/card-menu-management/product-choice/ProductChoiceRepository";
-import {ERROR_INVALID_REQUEST} from "@utils/messages/error_message";
+import {ERROR_INVALID_REQUEST} from "@utils/messages/errorMessage";
 
 export class ProductChoiceDeleteService {
 

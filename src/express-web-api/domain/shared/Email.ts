@@ -1,4 +1,4 @@
-import {ERROR_ALREADY_EXIST, ERROR_INVALID_EMAIL} from "@utils/messages/error_message";
+import {ERROR_ALREADY_EXIST, ERROR_INVALID_EMAIL} from "@utils/messages/errorMessage";
 import {AdminRepository} from "@root/domain/admin/AdminRepository";
 
 export class Email {

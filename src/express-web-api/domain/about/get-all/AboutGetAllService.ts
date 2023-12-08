@@ -1,5 +1,5 @@
 import { AboutRepository } from "@root/domain/about/AboutRepository";
-import { ERROR_NOT_FOUND } from "@utils/messages/error_message";
+import { ERROR_NOT_FOUND } from "@utils/messages/errorMessage";
 
 export class AboutGetAllService {
 

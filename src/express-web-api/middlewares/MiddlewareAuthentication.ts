@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import { ERROR_NOT_AUTHORIZED } from "@utils/messages/error_message";
+import { ERROR_NOT_AUTHORIZED } from "@utils/messages/errorMessage";
 
 // Extend 'Request' interface to include 'user' property
 declare module 'express' {

@@ -1,5 +1,5 @@
 import { CardProduct } from "@root/domain/card-menu-management/card-product/CardProduct";
-import {ERROR_INVALID_REQUEST, ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_INVALID_REQUEST, ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 import { CardProductRepository } from "@root/domain/card-menu-management/card-product/CardProductRepository";
 import {
     CardProductCreateRequestData

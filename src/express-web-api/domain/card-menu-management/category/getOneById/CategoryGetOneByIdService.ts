@@ -1,5 +1,5 @@
 import { CategoryRepository } from "@root/domain/card-menu-management/category/CategoryRepository";
-import { ERROR_NOT_FOUND } from "@utils/messages/error_message";
+import { ERROR_NOT_FOUND } from "@utils/messages/errorMessage";
 
 export class CategoryGetOneByIdService {
     static verifyRequestData(requestId: string) {

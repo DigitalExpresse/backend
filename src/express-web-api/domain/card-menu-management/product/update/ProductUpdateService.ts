@@ -1,4 +1,4 @@
-import {ERROR_ALREADY_EXIST, ERROR_INVALID_REQUEST, ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_ALREADY_EXIST, ERROR_INVALID_REQUEST, ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 import {ProductRepository} from "@root/domain/card-menu-management/product/ProductRepository";
 
 export class ProductUpdateService {

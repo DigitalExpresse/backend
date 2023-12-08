@@ -8,7 +8,7 @@ import {
     SUCCESS_RESOURCE_CREATED,
     SUCCESS_RESOURCE_DELETED,
     SUCCESS_RESOURCE_UPDATED
-} from "@utils/messages/success_message";
+} from "@utils/messages/successMessage";
 import {handleErrors} from "@utils/service/handleErrors";
 import {
     ProductSupplementDeleteController

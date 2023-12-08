@@ -1,4 +1,4 @@
-import {ERROR_INVALID_REQUEST} from "@utils/messages/error_message";
+import {ERROR_INVALID_REQUEST} from "@utils/messages/errorMessage";
 import {Product} from "@root/domain/card-menu-management/product/Product";
 import {ProductRepository} from "@root/domain/card-menu-management/product/ProductRepository";
 

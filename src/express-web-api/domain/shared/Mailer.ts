@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 import handlebars from 'handlebars';
 
-import { ERROR_EMAIL_NOT_SENT } from "@utils/messages/error_message";
+import { ERROR_EMAIL_NOT_SENT } from "@utils/messages/errorMessage";
 import { restaurantName } from "@utils/restaurantInfo";
 import {EmailType} from "@root/email-template/EmailType";
 

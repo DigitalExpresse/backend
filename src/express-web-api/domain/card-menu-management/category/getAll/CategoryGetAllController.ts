@@ -1,5 +1,5 @@
 import { CategoryGetAllService } from "@root/domain/card-menu-management/category/getAll/CategoryGetAllService";
-import { ERROR_NOT_FOUND } from "@utils/messages/error_message";
+import { ERROR_NOT_FOUND } from "@utils/messages/errorMessage";
 
 export class CategoryGetAllController {
     async getAllController() {

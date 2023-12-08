@@ -1,4 +1,4 @@
-import {ERROR_INVALID_PASSWORD} from "@utils/messages/error_message";
+import {ERROR_INVALID_PASSWORD} from "@utils/messages/errorMessage";
 import bcrypt from "bcryptjs";
 
 export class Password {

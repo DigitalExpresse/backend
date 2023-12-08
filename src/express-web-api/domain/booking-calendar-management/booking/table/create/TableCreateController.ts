@@ -1,7 +1,7 @@
 import {TableRepository} from "@root/domain/booking-calendar-management/booking/table/TableRepository";
 import {TableCreateService} from "@root/domain/booking-calendar-management/booking/table/create/TableCreateService";
 import {Table} from "@root/domain/booking-calendar-management/booking/table/Table";
-import {ERROR_ALREADY_EXIST} from "@utils/messages/error_message";
+import {ERROR_ALREADY_EXIST} from "@utils/messages/errorMessage";
 
 export class TableCreateController {
 

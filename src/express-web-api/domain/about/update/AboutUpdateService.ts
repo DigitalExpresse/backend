@@ -1,5 +1,5 @@
 import {AboutRepository} from "@root/domain/about/AboutRepository";
-import {ERROR_INVALID_REQUEST} from "@utils/messages/error_message";
+import {ERROR_INVALID_REQUEST} from "@utils/messages/errorMessage";
 
 
 export class AboutUpdateService {

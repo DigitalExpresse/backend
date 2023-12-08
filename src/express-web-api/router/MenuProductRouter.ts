@@ -4,7 +4,7 @@ import {handleErrors} from "@utils/service/handleErrors";
 import {
     MenuProductGetAllController
 } from "@root/domain/card-menu-management/menu-product/getAll/MenuProductGetAllController";
-import {SUCCESS} from "@utils/messages/success_message";
+import {SUCCESS} from "@utils/messages/successMessage";
 import {
     MenuProductGetOneByIdController
 } from "@root/domain/card-menu-management/menu-product/getOneById/MenuProductGetOneByIdController";

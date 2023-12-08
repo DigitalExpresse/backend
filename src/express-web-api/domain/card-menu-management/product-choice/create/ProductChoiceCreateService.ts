@@ -1,7 +1,7 @@
 import {
     ProductChoiceCreateRequest
 } from "@root/domain/card-menu-management/product-choice/create/ProductChoiceCreateController";
-import {ERROR_INVALID_REQUEST, ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_INVALID_REQUEST, ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 import {ProductChoiceRepository} from "@root/domain/card-menu-management/product-choice/ProductChoiceRepository";
 
 export class ProductChoiceCreateService {

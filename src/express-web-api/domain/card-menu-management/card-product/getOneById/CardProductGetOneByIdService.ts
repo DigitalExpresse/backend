@@ -1,4 +1,4 @@
-import {ERROR_NOT_FOUND} from "@utils/messages/error_message";
+import {ERROR_NOT_FOUND} from "@utils/messages/errorMessage";
 import {CardProductRepository} from "@root/domain/card-menu-management/card-product/CardProductRepository";
 
 export class CardProductGetOneByIdService {

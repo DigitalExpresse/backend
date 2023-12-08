@@ -4,7 +4,7 @@ import {handleErrors} from "@utils/service/handleErrors";
 import {
     CardProductGetAllController
 } from "@root/domain/card-menu-management/card-product/getAll/CardProductGetAllController";
-import {SUCCESS, SUCCESS_RESOURCE_DELETED} from "@utils/messages/success_message";
+import {SUCCESS, SUCCESS_RESOURCE_DELETED} from "@utils/messages/successMessage";
 import {
     CardProductGetOneByIdController
 } from "@root/domain/card-menu-management/card-product/getOneById/CardProductGetOneByIdController";

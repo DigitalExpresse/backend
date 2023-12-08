@@ -1,7 +1,7 @@
 import express from "express";
 import {handleErrors} from "@utils/service/handleErrors";
 import {MiddlewareAuthentication} from "@root/middlewares/MiddlewareAuthentication";
-import {SUCCESS, SUCCESS_RESOURCE_DELETED} from "@utils/messages/success_message";
+import {SUCCESS, SUCCESS_RESOURCE_DELETED} from "@utils/messages/successMessage";
 import {
     TableGetAllController
 } from "@root/domain/booking-calendar-management/booking/table/get-all/TableGetAllController";

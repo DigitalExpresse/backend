@@ -1,5 +1,5 @@
 import { MenuProductRepository } from "@root/domain/card-menu-management/menu-product/MenuProductRepository";
-import { ERROR_NOT_FOUND } from "@utils/messages/error_message";
+import { ERROR_NOT_FOUND } from "@utils/messages/errorMessage";
 
 export class MenuProductGetByMenuIdService {
     static async getByMenuId(cardId: number) {
